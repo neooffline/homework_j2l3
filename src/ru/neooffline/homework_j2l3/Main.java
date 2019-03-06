@@ -1,29 +1,46 @@
 package ru.neooffline.homework_j2l3;
 
+import java.util.ArrayList;
+
 public class Main {
-    private static String[] strArray = {"струна", "приют", "принц", "аккомпанемент",
-            "ртуть", "лицо", "строгий", "образование", "отступать", "японец",
-            "ложить", "колун", "струна", "высочество", "струна",
-            "компетентный", "негатив", "престол", "изменять", "консилиум"};
+    private static String[] strArray = {"Струна", "приют",
+            "отступать", "струна", "струна","ЛУЧ","погоня",
+            "приют", "консилиум", "консилиум", "консилиум", "солнце", "луч"};
 
     public static void main(String[] args) {
-        String curDup = findDupclicates(strArray);
-        System.out.printf("Количество дублей: %s\n", curDup);
-
+        String[] curDup = findDuplicates(strArray);
+//        System.out.printf("Количество дублей: %s\n", curDup);
+        for (String el : curDup
+                ) {
+            System.out.println(el);
+        }
+        System.out.printf("--------------\n%d уникальных элементов из %d",
+                curDup.length,strArray.length);
     }
 
-    public static String findDupclicates(String[] strArray) {
-        int duplicates = 0;
-        int unucal = strArray.length;
-        for (int i = 0; i < strArray.length; i++) {
-            for (int j = i + 1; j < strArray.length; j++) {
-                if (j != i && strArray[j].equals(strArray[i])) {
-                    duplicates++;
-                    unucal--;
-                }
-
+    public static String[] findDuplicates(String[] strArray) {
+        ArrayList<String> resArrayList = new ArrayList<>();
+        ArrayList<String> dupArrayList = new ArrayList<>();
+        for (String el : strArray) {
+            String lowerCase = el.toLowerCase();
+            if (!resArrayList.contains(el)) {
+                resArrayList.add(lowerCase);
+            } else {
+                dupArrayList.add(el);
             }
         }
-        return duplicates + " " + unucal;
+        for (int i = 0; i < resArrayList.size(); i++) {
+            String el = resArrayList.get(i);
+            for (int k = 0; k < dupArrayList.size(); k++) {
+                String el2 = dupArrayList.get(k);
+                if (el.equals(el2)) {
+                    resArrayList.remove(i);
+                    break;
+                }
+            }
+        }
+//        Set<String> unique = new HashSet<>(resArrayList);
+        return resArrayList.toArray(new String[resArrayList.size()]);
+//        return unique.toArray(new String[unique.size()]);
     }
 }
