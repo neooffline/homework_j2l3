@@ -22,6 +22,7 @@ public class Main {
         phoneBook.add("Frolov","6777767677");
         phoneBook.add("Sidorov","88002255555");
         phoneBook.get();
+        phoneBook.get("Frolov");
     }
 
     public static String[] findDuplicates(String[] strArray) {
