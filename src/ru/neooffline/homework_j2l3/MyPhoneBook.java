@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MyPhoneBook {
-    private String fistName;
+    private String firstName;
     private String phone;
     private Map<String, String> phoneBook;
 
@@ -15,8 +15,9 @@ public class MyPhoneBook {
         phoneBook.put("Янушкевич", "88002321503");
     }
 
-    public void add(String fistName, String phone) {
-        phoneBook.merge(fistName, phone, (oldVal, newVal) -> oldVal + ", " + newVal);
+    public void add(String firstName, String phone) {
+        phoneBook.merge(firstName, phone, (oldVal, newVal) ->
+                oldVal + ", " + newVal);
     }
 
     public void get() {
@@ -30,9 +31,9 @@ public class MyPhoneBook {
         System.out.println("------------------");
     }
 
-    public void get(String fistName) {
-        System.out.printf("Результат поиска по фамилии \"%s\":\n", fistName);
+    public void get(String firstName) {
+        System.out.printf("Результат поиска по фамилии \"%s\":\n", firstName);
         System.out.println("Телефон(-ы): "
-                + phoneBook.get(fistName));
+                + phoneBook.get(firstName));
     }
 }
