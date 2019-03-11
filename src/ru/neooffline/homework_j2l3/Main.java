@@ -4,18 +4,24 @@ import java.util.ArrayList;
 
 public class Main {
     private static String[] strArray = {"Струна", "приют",
-            "отступать", "струна", "струна","ЛУЧ","погоня",
+            "отступать", "струна", "струна", "ЛУЧ", "погоня",
             "приют", "консилиум", "консилиум", "консилиум", "солнце", "луч"};
 
     public static void main(String[] args) {
         String[] curDup = findDuplicates(strArray);
 //        System.out.printf("Количество дублей: %s\n", curDup);
-        for (String el : curDup
-                ) {
+        for (String el : curDup) {
             System.out.println(el);
         }
-        System.out.printf("--------------\n%d уникальных элементов из %d",
-                curDup.length,strArray.length);
+        System.out.printf("--------------\n%d уникальных элементов из %d\n",
+                curDup.length, strArray.length);
+
+        MyPhoneBook phoneBook = new MyPhoneBook();
+        phoneBook.get();
+        System.out.println();
+        phoneBook.add("Frolov","6777767677");
+        phoneBook.add("Sidorov","88002255555");
+        phoneBook.get();
     }
 
     public static String[] findDuplicates(String[] strArray) {
@@ -39,8 +45,6 @@ public class Main {
                 }
             }
         }
-//        Set<String> unique = new HashSet<>(resArrayList);
         return resArrayList.toArray(new String[resArrayList.size()]);
-//        return unique.toArray(new String[unique.size()]);
     }
 }
