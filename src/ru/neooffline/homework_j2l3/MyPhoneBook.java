@@ -24,14 +24,14 @@ public class MyPhoneBook {
                 "--------------------");
         for (String e : phoneBook.keySet()
                 ) {
-            System.out.println("Ф: "+e + " телефон(-ы): " + phoneBook.get(e));
+            System.out.println("Р¤: "+e + " С‚РµР»РµС„РѕРЅ(-С‹): " + phoneBook.get(e));
         }
         System.out.println("------------------");
     }
 
     public void get(String fistName) {
-        System.out.printf("Результат поиска по фамилии %s:\n",fistName);
-        System.out.println(fistName + " телефон(-ы): "
+        System.out.printf("Р РµР·СѓР»СЊС‚Р°С‚ РїРѕРёСЃРєР° РїРѕ С„Р°РјРёР»РёРё %s:\n",fistName);
+        System.out.println(fistName + " С‚РµР»РµС„РѕРЅ(-С‹): "
                 + phoneBook.get(fistName));
     }
 }

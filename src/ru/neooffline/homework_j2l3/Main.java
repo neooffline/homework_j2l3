@@ -3,17 +3,17 @@ package ru.neooffline.homework_j2l3;
 import java.util.ArrayList;
 
 public class Main {
-    private static String[] strArray = {"Струна", "приют",
-            "отступать", "струна", "струна", "ЛУЧ", "погоня",
-            "приют", "консилиум", "консилиум", "консилиум", "солнце", "луч"};
+    private static String[] strArray = {"РЎС‚СЂСѓРЅР°", "РїСЂРёСЋС‚",
+            "РѕС‚СЃС‚СѓРїР°С‚СЊ", "СЃС‚СЂСѓРЅР°", "СЃС‚СЂСѓРЅР°", "Р›РЈР§", "РїРѕРіРѕРЅСЏ",
+            "РїСЂРёСЋС‚", "РєРѕРЅСЃРёР»РёСѓРј", "РєРѕРЅСЃРёР»РёСѓРј", "РєРѕРЅСЃРёР»РёСѓРј", "СЃРѕР»РЅС†Рµ", "Р»СѓС‡"};
 
     public static void main(String[] args) {
         String[] curDup = findDuplicates(strArray);
-//        System.out.printf("Количество дублей: %s\n", curDup);
+//        System.out.printf("РљРѕР»РёС‡РµСЃС‚РІРѕ РґСѓР±Р»РµР№: %s\n", curDup);
         for (String el : curDup) {
             System.out.println(el);
         }
-        System.out.printf("--------------\n%d уникальных элементов из %d\n",
+        System.out.printf("--------------\n%d СѓРЅРёРєР°Р»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ РёР· %d\n",
                 curDup.length, strArray.length);
 
         MyPhoneBook phoneBook = new MyPhoneBook();
