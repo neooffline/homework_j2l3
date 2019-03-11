@@ -19,10 +19,10 @@ public class Main {
         MyPhoneBook phoneBook = new MyPhoneBook();
         phoneBook.get();
         System.out.println();
-        phoneBook.add("Frolov","6777767677");
-        phoneBook.add("Sidorov","88002255555");
+        phoneBook.add("Фролов","6777767677");
+        phoneBook.add("Сидоров","88002255555");
         phoneBook.get();
-        phoneBook.get("Frolov");
+        phoneBook.get("Фролов");
     }
 
     public static String[] findDuplicates(String[] strArray) {

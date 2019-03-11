@@ -10,9 +10,9 @@ public class MyPhoneBook {
 
     MyPhoneBook() {
         phoneBook = new HashMap<>();
-        phoneBook.put("Frolov", "4232323");
-        phoneBook.put("Sidorov", "512125");
-        phoneBook.put("Yanushkevich", "888999333");
+        phoneBook.put("Фролов", "84953488855");
+        phoneBook.put("Сидоров", "84951234567");
+        phoneBook.put("Янушкевич", "88002321503");
     }
 
     public void add(String fistName, String phone) {
@@ -20,18 +20,19 @@ public class MyPhoneBook {
     }
 
     public void get() {
-        System.out.println("Fist name   Tel\n" +
-                "--------------------");
+        System.out.printf("%15s\t%15s\n------------------\n",
+                "FistName", "Tel");
         for (String e : phoneBook.keySet()
                 ) {
-            System.out.println("Ф: "+e + " телефон(-ы): " + phoneBook.get(e));
+            System.out.printf("Ф:%15s\t%15s\n",
+                    e, phoneBook.get(e));
         }
         System.out.println("------------------");
     }
 
     public void get(String fistName) {
-        System.out.printf("Результат поиска по фамилии %s:\n",fistName);
-        System.out.println(fistName + " телефон(-ы): "
+        System.out.printf("Результат поиска по фамилии \"%s\":\n", fistName);
+        System.out.println("Телефон(-ы): "
                 + phoneBook.get(fistName));
     }
 }
